@@ -1,0 +1,14 @@
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    command: ["--config.file=/prometheus-config/prometheus.yml"]
+    volumes:
+      - ./prometheus-config:/prometheus-config
+      - ./data/prometheus:/prometheus
+    ports:
+      - 9090:9090
+  
+  app:
+    image: 06c8c74ce594
+    ports:
+      - 3000:3000
