@@ -26,6 +26,12 @@ services:
       - 9100:9100 
   
   grafana:
+    user: "0"
     image: grafana/grafana
+    container_name: grafana
+    volumes:
+      - ./data/grafana:/var/lib/grafana
     ports:
       - 2000:3000
+    depends_on: 
+      - prometheus
