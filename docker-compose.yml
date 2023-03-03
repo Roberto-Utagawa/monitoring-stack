@@ -24,3 +24,8 @@ services:
       - '/:/host:ro,rslave'
     ports:
       - 9100:9100 
+  
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 2000:3000
