@@ -1,0 +1,17 @@
+{
+	"ulid": "01GTRRKC274MCN2MKGF8107J5Y",
+	"minTime": 1677970900854,
+	"maxTime": 1677974400000,
+	"stats": {
+		"numSamples": 72913,
+		"numSeries": 1397,
+		"numChunks": 1397
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01GTRRKC274MCN2MKGF8107J5Y"
+		]
+	},
+	"version": 1
+}

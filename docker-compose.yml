@@ -1,6 +1,6 @@
 services:
   prometheus:
-    user: "1000:1000"
+    user: "1000:1000" # User root do Prometheus
     image: prom/prometheus:latest
     command: ["--config.file=/prometheus-config/prometheus.yml"]
     volumes:
@@ -10,13 +10,13 @@ services:
       - 9090:9090
   
   app:
-    image: 06c8c74ce594
+    image: harbor.sflabs.com.br/processo/petshop
     ports:
       - 3000:3000
 
-  node_exporter:
+  node:
     image: quay.io/prometheus/node-exporter:latest
-    container_name: node_exporter
+    container_name: node
     command:
       - '--path.rootfs=/host'
     restart: unless-stopped
@@ -26,7 +26,7 @@ services:
       - 9100:9100 
   
   grafana:
-    user: "0"
+    user: "0" #User root do grafana
     image: grafana/grafana
     container_name: grafana
     volumes:
